@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="505.0" prefWidth="804.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.electeurRegistrationController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="397.20001220703125" minWidth="10.0" prefWidth="360.40001220703124" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="521.2000122070312" minWidth="10.0" prefWidth="150.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="521.2000122070312" minWidth="10.0" prefWidth="150.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="521.2000122070312" minWidth="10.0" prefWidth="150.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="521.2000122070312" minWidth="10.0" prefWidth="125.79990234374998" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="521.2000122070312" minWidth="10.0" prefWidth="73.00009765624998" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label fx:id="nomlabel" prefHeight="62.0" prefWidth="139.0" text="Nom :" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <font>
+            <Font name="Roboto Slab Regular" size="12.0" />
+         </font></Label>
+      <Label fx:id="prenomlabel" alignment="CENTER" prefHeight="74.0" prefWidth="142.0" text="Prenom : " textAlignment="RIGHT" GridPane.columnIndex="3" GridPane.rowIndex="1">
+         <font>
+            <Font name="Roboto Slab Regular" size="12.0" />
+         </font></Label>
+      <TextField fx:id="nomtxtfield" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <TextField fx:id="prenomtxt" scaleX="0.96" translateX="-6.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+      <Label fx:id="datelabel" prefHeight="44.0" prefWidth="120.0" text="Date de Naissance : " GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
+         <font>
+            <Font name="Roboto Slab Regular" size="12.0" />
+         </font></Label>
+      <Label fx:id="genrelabel" alignment="CENTER" prefHeight="78.0" prefWidth="148.0" text="Genre :" GridPane.columnIndex="3" GridPane.rowIndex="2">
+         <font>
+            <Font name="Roboto Slab Regular" size="12.0" />
+         </font></Label>
+      <Label fx:id="adresselabel" prefHeight="82.0" prefWidth="134.0" text="Adresse :" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <font>
+            <Font name="Roboto Slab Regular" size="12.0" />
+         </font></Label>
+      <Label fx:id="emaillabel" prefHeight="69.0" prefWidth="165.0" text="Email :" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <font>
+            <Font name="Roboto Slab Regular" size="12.0" />
+         </font></Label>
+      <Label fx:id="confirmlabel" prefHeight="54.0" prefWidth="161.0" text="Confirm Email :" GridPane.columnIndex="1" GridPane.rowIndex="5">
+         <font>
+            <Font name="Roboto Slab Regular" size="12.0" />
+         </font></Label>
+      <Label fx:id="passwordlabel" prefHeight="53.0" prefWidth="171.0" text="Password :" GridPane.columnIndex="1" GridPane.rowIndex="6">
+         <font>
+            <Font name="Roboto Slab Regular" size="12.0" />
+         </font></Label>
+      <Label fx:id="coemaillabel" alignment="CENTER" prefHeight="57.0" prefWidth="136.0" text="Confirm Password :" GridPane.columnIndex="3" GridPane.rowIndex="6">
+         <font>
+            <Font name="Roboto Slab Regular" size="12.0" />
+         </font></Label>
+      <Label fx:id="cinlabel" prefHeight="52.0" prefWidth="162.0" text="CIN :" GridPane.columnIndex="1" GridPane.rowIndex="7">
+         <font>
+            <Font name="Roboto Slab Regular" size="12.0" />
+         </font></Label>
+      <Label fx:id="telelabel" alignment="CENTER" prefHeight="60.0" prefWidth="139.0" text="Telephone :" GridPane.columnIndex="3" GridPane.rowIndex="7">
+         <font>
+            <Font name="Roboto Slab Regular" size="12.0" />
+         </font></Label>
+      <ChoiceBox fx:id="genrechoice" prefWidth="150.0" scaleX="0.96" translateX="-6.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+      <DatePicker fx:id="dateinput" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <PasswordField fx:id="passwordtx" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+      <PasswordField fx:id="copasswordtxt" alignment="TOP_LEFT" scaleX="0.96" translateX="-6.0" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+      <TextField fx:id="adressetxt" scaleX="0.97" translateX="-5.0" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="3" />
+      <TextField fx:id="emailtxt" scaleX="0.97" translateX="-5.0" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="4" />
+      <TextField fx:id="confirmtxt" scaleX="0.99" translateX="-2.0" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="5" />
+      <TextField fx:id="cintxt" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+      <TextField fx:id="teletx" scaleX="0.96" translateX="-6.0" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+      <Label fx:id="titleform" alignment="CENTER" prefHeight="90.0" prefWidth="862.0" text="Electeur Registration" textAlignment="CENTER" translateX="170.0" GridPane.columnSpan="5">
+         <font>
+            <Font name="Roboto Slab Medium" size="20.0" />
+         </font>
+      </Label>
+      <Button mnemonicParsing="false" onAction="#inscrireclicked" prefHeight="38.0" prefWidth="357.0" scaleX="0.99" text="S'inscrire" translateX="-6.0" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="9" />
+      <Label alignment="TOP_RIGHT" onDragDetected="#dejainscritlabel" prefHeight="73.0" prefWidth="126.0" scaleY="0.99" text="Déja inscrit? " translateY="-2.0" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+      <Hyperlink fx:id="auth" alignment="TOP_LEFT" contentDisplay="CENTER" onAction="#authentificationclicked" prefHeight="71.0" prefWidth="120.0" text="S'authentifier" translateY="-5.0" GridPane.columnIndex="4" GridPane.rowIndex="10" />
+      <ImageView fx:id="votingonline" fitHeight="320.0" fitWidth="328.0" GridPane.rowIndex="5">
+         <image>
+            <Image url="@../../../../../Downloads/voteelecfinal.png" />
+         </image>
+      </ImageView>
+   </children>
+</GridPane>
