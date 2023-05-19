@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import application.model.Electeur;
 import application.util.DBconnection;
@@ -74,7 +75,6 @@ public Electeur getElecteur(int id) {
 	try {
 		e=new Electeur();
 		PreparedStatement ps=conn.prepareStatement("select * from electeur where id_elc="+id);
-		ps.executeUpdate();
 		ResultSet rs=ps.executeQuery();
 		if(rs.next()) {
 			e.setId_elec(rs.getInt("id_elec"));
@@ -97,5 +97,37 @@ public Electeur getElecteur(int id) {
 	}
 	return e;
 	
-} 
+}
+public ArrayList<Electeur> getElecteurs() {
+	Connection conn=DBconnection.getConnection();
+	ArrayList<Electeur> electeurs=new ArrayList<>();
+	try {
+		
+		PreparedStatement ps=conn.prepareStatement("select * from electeur");
+		ps.executeUpdate();
+		ResultSet rs=ps.executeQuery();
+		while(rs.next()) {
+			Electeur e=new Electeur();
+			e.setId_elec(rs.getInt("id_elec"));
+			e.setNom(rs.getString("Nom"));
+			e.setPrenom(rs.getString("Prenom"));
+			e.setGenre(rs.getString("Genre").charAt(0));
+			e.setDate_Naissance(rs.getDate("Date_Naissance"));
+			e.setAdresse(rs.getString("Adresse"));
+			e.setEmail(rs.getString("Email"));
+			e.setPassword(rs.getString("Password"));
+			e.setTel(rs.getString("tel"));
+			e.setCIN(rs.getString("CIN"));
+			electeurs.add(e);
+			
+			
+		}
+		
+		
+	} catch (SQLException e2) {
+		e2.printStackTrace();
+	}
+	return electeurs;
+	
+}
 }
