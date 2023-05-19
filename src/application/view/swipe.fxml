@@ -11,7 +11,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="658.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.swipeController">
    <children>
-      <ImageView fx:id="candidatimg" fitHeight="228.0" fitWidth="206.0" layoutX="226.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="141.0" AnchorPane.leftAnchor="226.0" AnchorPane.rightAnchor="226.0" AnchorPane.topAnchor="90.0" />
+      <ImageView fx:id="candidatimg" fitHeight="228.0" fitWidth="206.0" layoutX="226.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" />
       <Button fx:id="right" layoutX="558.0" layoutY="391.0" mnemonicParsing="false" onAction="#rightClicked" prefHeight="38.0" prefWidth="61.0">
          <graphic>
             <ImageView fitHeight="29.0" fitWidth="41.0">
@@ -35,7 +35,7 @@
       <TextField fx:id="txtfield" layoutX="254.0" layoutY="48.0" />
       <ImageView fx:id="partilogo" fitHeight="67.0" fitWidth="108.0" layoutX="8.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
       <Hyperlink fx:id="lireplus" alignment="CENTER" layoutX="31.0" layoutY="78.0" onAction="#lireolusClicked" prefHeight="24.0" prefWidth="62.0" text="Lire plus..." textAlignment="CENTER" />
-      <Button fx:id="votebutton" layoutX="297.0" layoutY="390.0" mnemonicParsing="false" onAction="#voteClicked" prefHeight="38.0" prefWidth="61.0">
+      <Button fx:id="votebutton" layoutX="298.0" layoutY="391.0" mnemonicParsing="false" onAction="#voteClicked" prefHeight="38.0" prefWidth="61.0">
          <graphic>
             <ImageView fitHeight="29.0" fitWidth="41.0">
                <image>
