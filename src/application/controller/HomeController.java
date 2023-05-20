@@ -3,6 +3,8 @@ package application.controller;
 import java.io.IOException;
 
 import application.dao.LoginDao;
+import application.dao.swipeDao;
+import application.model.Swipeinfo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -61,17 +63,19 @@ public class HomeController {
                    Stage newStage = new Stage();
                    newStage.setScene(scene);
                    newStage.show();
-                    
+                   
                 } catch (IOException ex) {
                     System.err.println(ex.getMessage());
                 }
             }
             case "electeur" -> {
-            	System.out.println("eleecteur");
-
+            	swipeDao swipeDao=new swipeDao();
+            	int currentId=swipeDao.getIdElecteur(txtEmail.getText().toString());
                 try {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/swipe.fxml"));
                    Parent root = loader.load();
+                   swipeController swipeController=loader.getController();
+                   swipeController.setId_elec(currentId);
 
                    Scene scene = new Scene(root);
 
@@ -81,6 +85,7 @@ public class HomeController {
                    Stage newStage = new Stage();
                    newStage.setScene(scene);
                    newStage.show();
+                   
                     
                 } catch (IOException ex) {
                     System.err.println(ex.getMessage());

@@ -1,6 +1,7 @@
 package application.controller;
 
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.util.Optional;
@@ -10,7 +11,11 @@ import application.dao.ElecteurDAO;
 import application.model.Electeur;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
@@ -22,6 +27,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 public class electeurRegistrationController implements Initializable {
 
@@ -117,7 +123,7 @@ public class electeurRegistrationController implements Initializable {
     }
 
     @FXML
-    void inscrireclicked(ActionEvent event) {
+    void inscrireclicked(ActionEvent event) throws IOException {
     	
     	if (nomtxtfield.getText().isEmpty() || prenomtxt.getText().isEmpty() || dateinput.getValue()==null || genrechoice.getValue()==null || adressetxt.getText().isEmpty() || confirmtxt.getText().isEmpty() || passwordtx.getText().isEmpty() || copasswordtxt.getText().isEmpty() || cintxt.getText().isEmpty() || teletx.getText().isEmpty() ) {
 			Alert alert=new Alert(AlertType.ERROR);
@@ -144,7 +150,7 @@ public class electeurRegistrationController implements Initializable {
         Optional<ButtonType> result = alert.showAndWait();
     		
     	}else {
-    		Electeur e=new Electeur();
+    		/*Electeur e=new Electeur();
     		e.setNom(nomtxtfield.getText());
     		e.setPrenom(prenomtxt.getText());
     		e.setDate_Naissance(Date.valueOf(dateinput.getValue()));
@@ -156,12 +162,24 @@ public class electeurRegistrationController implements Initializable {
     		e.setCIN(cintxt.getText());
     		ElecteurDAO dao=new ElecteurDAO();
     		dao.addElecteur(e);
+    		*/
     		Alert alert=new Alert(AlertType.INFORMATION);
         	alert.setTitle("Inscription réussie");
             alert.setHeaderText(null);
             
             alert.setContentText("L'inscription a réussi !");
             Optional<ButtonType> result = alert.showAndWait();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/swipe.fxml"));
+            Parent root = loader.load();
+
+            Scene scene = new Scene(root);
+
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            currentStage.close();
+
+            Stage newStage = new Stage();
+            newStage.setScene(scene);
+            newStage.show();
 
 		}
     }

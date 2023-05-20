@@ -9,9 +9,8 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="658.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.swipeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="658.0" stylesheets="" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.swipeController">
    <children>
-      <ImageView fx:id="candidatimg" fitHeight="228.0" fitWidth="206.0" layoutX="226.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" />
       <Button fx:id="right" layoutX="558.0" layoutY="391.0" mnemonicParsing="false" onAction="#rightClicked" prefHeight="38.0" prefWidth="61.0">
          <graphic>
             <ImageView fitHeight="29.0" fitWidth="41.0">
@@ -23,6 +22,7 @@
                </viewport>
             </ImageView>
          </graphic></Button>
+      <ImageView fx:id="candidatimg" fitHeight="228.0" fitWidth="206.0" layoutX="226.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true" />
       <Button fx:id="left" layoutX="41.0" layoutY="391.0" mnemonicParsing="false" onAction="#leftClicked" prefHeight="38.0" prefWidth="61.0">
          <graphic>
             <ImageView fitHeight="29.0" fitWidth="41.0">

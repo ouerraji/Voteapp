@@ -6,6 +6,7 @@ public class Swipeinfo {
 private String fullName;
 private byte[] candidatPicture;
 private byte[] partiPicture;
+private int id_candidat;
 
 public Swipeinfo() {
 	super();
@@ -36,5 +37,17 @@ public byte[] getPartiPicture() {
 public void setPartiPicture(byte[] partiPicture) {
 	this.partiPicture = partiPicture;
 }
+
+public int getId_candidat() {
+	return id_candidat;
+}
+
+public void setId_candidat(int id_candidat) {
+	this.id_candidat = id_candidat;
+}
+
+
+
+
 
 }

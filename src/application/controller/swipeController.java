@@ -1,26 +1,29 @@
 package application.controller;
 
 import java.io.ByteArrayInputStream;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
+import java.sql.Timestamp;
 import java.util.ArrayList;
-
-import application.dao.CandidatDAO;
+import javafx.scene.control.Alert;
 import application.dao.swipeDao;
-import application.model.Candidat;
 import application.model.Swipeinfo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class swipeController {
+	private int id_elec;
+	
 
+	public void setId_elec(int id_elec) {
+		this.id_elec = id_elec;
+	}
 	@FXML
 	private ImageView candidatimg;
 
@@ -97,6 +100,38 @@ public class swipeController {
 	}
 	@FXML
     void voteClicked(ActionEvent event) {
+		swipeDao dao1=new swipeDao();
+		if(dao1.ALreadyVoted(id_elec))
+		{
+			Alert alert = new Alert(AlertType.ERROR);
+	        alert.setTitle("Erreur de vote");
+	        alert.setHeaderText(null);
+	        alert.setContentText("Vous avez déjà voté !");
+	        alert.showAndWait();
+	        return;
+    } 
+    else {Alert confirmation = new Alert(AlertType.CONFIRMATION);
+    confirmation.setTitle("Confirmation");
+    confirmation.setHeaderText("Confirmer le vote");
+    confirmation.setContentText("Êtes-vous sûr de vouloir voter pour " + swipeinfos.get(index).getFullName() + " ?\nCette action est irréversible.");
+    confirmation.getButtonTypes().setAll(ButtonType.OK, ButtonType.CANCEL);
+    ButtonType answer = confirmation.showAndWait().orElse(ButtonType.CANCEL);
+    if (answer == ButtonType.OK) {
+    	swipeDao dao=new swipeDao();
+		Timestamp timestamp=new Timestamp(System.currentTimeMillis());
+		
+		dao.inserVote(id_elec,timestamp, swipeinfos.get(index).getId_candidat());
+        
+        Alert success = new Alert(AlertType.INFORMATION);
+        success.setTitle("Succès");
+        success.setHeaderText(null);
+        success.setContentText("Vote enregistré avec succès !");
+        success.showAndWait();
+        votebutton.setDisable(true);
+    }
+}
+		
+		
 
     }
 	@FXML
