@@ -6,8 +6,8 @@ public class test {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-swipeDao swipeDao=new swipeDao();
-swipeDao.getSwipeinfos();
+readMoreDao dao=new readMoreDao();
+dao.getmore(2);
 	}
 
 }

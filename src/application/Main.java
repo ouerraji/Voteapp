@@ -12,11 +12,11 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			//Parent root=FXMLLoader.load(getClass().getResource("view/electeurRegistration.fxml"));
-			Parent root=FXMLLoader.load(getClass().getResource("view/swipe.fxml"));
+			Parent root=FXMLLoader.load(getClass().getResource("view/Home.fxml"));
 
 			Scene scene = new Scene(root);
-			//primaryStage.setTitle("Registration electeur");
-			primaryStage.setTitle("test swipe");
+			//primaryStage.setTitle("Login");
+			primaryStage.setTitle("Login");
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {

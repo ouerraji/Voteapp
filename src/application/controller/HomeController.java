@@ -1,13 +1,19 @@
 package application.controller;
 
 import java.io.IOException;
-
+import java.util.Optional;
+import java.util.Date;
+import java.time.LocalDate;
 import application.dao.LoginDao;
 import application.dao.swipeDao;
+import application.dao.timerDao;
 import application.model.Swipeinfo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Dialog;
+import javafx.scene.control.DialogPane;
+import javafx.scene.control.ButtonType;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -39,18 +45,42 @@ public class HomeController {
     @FXML
     private Button btnConnecter;
     @FXML
-    private Button btnCreerCompte;   
+    private Button btnCreerCompte;
+    
 
     
     @FXML
     void connecterClicked(ActionEvent event) {
     	LoginDao dao=new LoginDao();
     	String type=dao.logIn(txtEmail.getText().toString(),txtPswrd.getText().toString());
+    	    	
     	
 
     	
         switch (type) {
             case "candidat" -> {
+            	timerDao dao2 =new timerDao();
+            	Date end=dao2.getEnd();
+            	Date now=new Date(); 
+            	if(now.after(end)) {
+            		try {
+                 	   FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/winner.fxml"));
+                        Parent root = loader.load();
+
+                        Scene scene = new Scene(root);
+
+                        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        currentStage.close();
+
+                        Stage newStage = new Stage();
+                        newStage.setScene(scene);
+                        newStage.show();
+                        
+                     } catch (IOException ex) {
+                         System.err.println(ex.getMessage());
+                     }
+            	}
+            	else {
                try {
             	   FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/swipe.fxml"));
                    Parent root = loader.load();
@@ -67,8 +97,30 @@ public class HomeController {
                 } catch (IOException ex) {
                     System.err.println(ex.getMessage());
                 }
-            }
+            }}
             case "electeur" -> {
+            	timerDao dao2 =new timerDao();
+            	Date end=dao2.getEnd();
+            	Date now=new Date(); 
+            	if(now.after(end)) {
+            		try {
+                 	   FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/winner.fxml"));
+                        Parent root = loader.load();
+
+                        Scene scene = new Scene(root);
+
+                        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        currentStage.close();
+
+                        Stage newStage = new Stage();
+                        newStage.setScene(scene);
+                        newStage.show();
+                        
+                     } catch (IOException ex) {
+                         System.err.println(ex.getMessage());
+                     }
+            	}
+            	else {
             	swipeDao swipeDao=new swipeDao();
             	int currentId=swipeDao.getIdElecteur(txtEmail.getText().toString());
                 try {
@@ -90,9 +142,30 @@ public class HomeController {
                 } catch (IOException ex) {
                     System.err.println(ex.getMessage());
                 }
-            }
+            }}
             case "admin" -> {
+            	timerDao dao2 =new timerDao();
+            	Date end=dao2.getEnd();
+            	Date now=new Date(); 
+            	if(now.after(end)) {
+            		try {
+                 	   FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/winner.fxml"));
+                        Parent root = loader.load();
 
+                        Scene scene = new Scene(root);
+
+                        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        currentStage.close();
+
+                        Stage newStage = new Stage();
+                        newStage.setScene(scene);
+                        newStage.show();
+                        
+                     } catch (IOException ex) {
+                         System.err.println(ex.getMessage());
+                     }
+            	}
+            	else {
                 try {
                 	FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/swipe.fxml"));
                     Parent root = loader.load();
@@ -109,7 +182,7 @@ public class HomeController {
                 } catch (IOException ex) {
                     System.err.println(ex.getMessage());
                 }
-            }
+            }}
             default -> {
             	if (txtEmail.getText().isEmpty() || txtPswrd.getText().isEmpty()) {
                     Alert alert = new Alert(AlertType.ERROR);
@@ -131,17 +204,20 @@ public class HomeController {
     @FXML
     void CreerClicked(ActionEvent event) throws IOException {
     	
-    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/choixCompte.fxml"));
-        Parent root = loader.load();
-
-        Scene scene = new Scene(root);
-
-        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        currentStage.close();
-
-        Stage newStage = new Stage();
-        newStage.setScene(scene);
-        newStage.show();
+    	 try{
+             FXMLLoader fxmlLoader = new FXMLLoader();
+             fxmlLoader.setLocation(getClass().getResource("/application/view/ChoixCompte.fxml"));
+             DialogPane choixDialogPane = fxmlLoader.load();
+             
+             Dialog<ButtonType> dialog = new Dialog<>();
+             dialog.setDialogPane(choixDialogPane);
+             dialog.setTitle("Choisir le type de votre compte");
+             Optional<ButtonType> clickedButton = dialog.showAndWait();
+                     
+                     
+             }catch(IOException e){
+             e.printStackTrace();
+             }
             
             
         

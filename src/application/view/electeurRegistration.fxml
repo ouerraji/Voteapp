@@ -97,7 +97,7 @@
             <Font name="Roboto Slab Medium" size="20.0" />
          </font>
       </Label>
-      <Button mnemonicParsing="false" onAction="#inscrireclicked" prefHeight="38.0" prefWidth="357.0" scaleX="0.99" text="S'inscrire" translateX="-6.0" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="9" />
+      <Button fx:id="inscrire" mnemonicParsing="false" onAction="#inscrireclicked" prefHeight="38.0" prefWidth="314.0" scaleX="0.99" style="-fx-background-color: DODGERBLUE;" text="S'inscrire" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="9" />
       <Label alignment="TOP_RIGHT" onDragDetected="#dejainscritlabel" prefHeight="73.0" prefWidth="126.0" scaleY="0.99" text="Déja inscrit? " translateY="-2.0" GridPane.columnIndex="3" GridPane.rowIndex="10" />
       <Hyperlink fx:id="auth" alignment="TOP_LEFT" contentDisplay="CENTER" onAction="#authentificationclicked" prefHeight="71.0" prefWidth="120.0" text="S'authentifier" translateY="-5.0" GridPane.columnIndex="4" GridPane.rowIndex="10" />
       <ImageView fx:id="votingonline" fitHeight="320.0" fitWidth="328.0" GridPane.rowIndex="5">

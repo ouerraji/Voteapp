@@ -18,6 +18,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
@@ -57,6 +58,9 @@ public class electeurRegistrationController implements Initializable {
 
     @FXML
     private TextField confirmtxt;
+    
+    @FXML
+    private Button inscrire;
 
     @FXML
     private DatePicker dateinput;
@@ -76,6 +80,8 @@ public class electeurRegistrationController implements Initializable {
 		// TODO Auto-generated method stub
 		genrechoice.getItems().add("Homme");
 		genrechoice.getItems().add("Femme");
+
+		
 	}    
     
 

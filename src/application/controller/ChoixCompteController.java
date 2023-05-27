@@ -49,7 +49,7 @@ public class ChoixCompteController implements Initializable {
                     }                   
         }
         
-        if(event.getSource()== btnelecteur){
+        else if(event.getSource()== btnelecteur){
             try{
               Node node = (Node) event.getSource();
                         Stage stage = (Stage) node.getScene().getWindow();
@@ -62,6 +62,7 @@ public class ChoixCompteController implements Initializable {
                         System.err.println(ex.getMessage());
                     }                   
         }
+        
         
         
         
