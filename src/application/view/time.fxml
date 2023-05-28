@@ -1,18 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="462.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.TimeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="422.0" prefWidth="800.0" styleClass="Gray" stylesheets="@../application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.TimeController">
    <children>
-      <Label layoutX="80.0" layoutY="79.0" text="Start Date" />
-      <Label layoutX="80.0" layoutY="159.0" text="End Date" />
-      <DatePicker fx:id="start" layoutX="192.0" layoutY="75.0" />
-      <DatePicker fx:id="end" layoutX="192.0" layoutY="155.0" />
-      <Button fx:id="validbtn" layoutX="205.0" layoutY="257.0" mnemonicParsing="false" onAction="#validerClicked" text="Valider" />
-      <TextField fx:id="test" layoutX="158.0" layoutY="318.0" />
+      <Label layoutX="418.0" layoutY="160.0" text="Start Date" textFill="#d31648">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font></Label>
+      <Label layoutX="422.0" layoutY="240.0" text="End Date" textFill="#d31648">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font></Label>
+      <DatePicker fx:id="start" layoutX="502.0" layoutY="159.0" />
+      <DatePicker fx:id="end" layoutX="502.0" layoutY="238.0" />
+      <Button fx:id="validbtn" layoutX="550.0" layoutY="285.0" mnemonicParsing="false" onAction="#validerClicked" prefHeight="20.0" prefWidth="80.0" styleClass="panea" stylesheets="@../application.css" text="Valider" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font></Button>
+      <ImageView fitHeight="267.0" fitWidth="266.0" layoutX="138.0" layoutY="6.0">
+         <image>
+            <Image url="@../../../../OneDrive/Bureau/3003202.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="123.0" fitWidth="100.0" layoutX="219.0" layoutY="-65.0">
+         <image>
+            <Image url="@../../../../OneDrive/Bureau/9644.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="334.0" fitWidth="333.0" layoutX="98.0" layoutY="5.0">
+         <image>
+            <Image url="@../icons/clock.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="214.0" layoutY="-10.0" prefHeight="25.0" prefWidth="100.0" stylesheets="@../application.css">
+         <styleClass>
+            <String fx:value="GrayGhameq" />
+            <String fx:value="buttons" />
+         </styleClass></Pane>
    </children>
 </AnchorPane>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="450.0" prefWidth="986.0" styleClass="Gray" stylesheets="@../application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ProfilAdminController">
+   <children>
+      <TextField fx:id="EnterEmail" layoutX="323.0" layoutY="101.0" prefHeight="44.0" prefWidth="368.0" promptText="Entrer votre email">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="EnterCIN" layoutX="323.0" layoutY="162.0" prefHeight="44.0" prefWidth="368.0" promptText="Entrer votre CIN">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <PasswordField fx:id="EnterNvmdps" layoutX="323.0" layoutY="279.0" prefHeight="44.0" prefWidth="368.0" promptText="Entrer le nouveau mot de passe">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </PasswordField>
+      <PasswordField fx:id="EnterAncienmdps" layoutX="323.0" layoutY="221.0" prefHeight="44.0" prefWidth="368.0" promptText="Entrer l'ancien mot de passe">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </PasswordField>
+      <PasswordField fx:id="ConfirmNvmdps" layoutX="323.0" layoutY="335.0" prefHeight="44.0" prefWidth="368.0" promptText="Confirmer le mot de passe">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </PasswordField>
+      <Button fx:id="ButtonModifier" layoutX="424.0" layoutY="391.0" mnemonicParsing="false" onAction="#ClickModifier" prefHeight="39.0" prefWidth="152.0" styleClass="panea" stylesheets="@../application.css" text="Modifer" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Pane layoutX="277.0" layoutY="10.0" prefHeight="71.0" prefWidth="455.0" styleClass="parent" stylesheets="@../application.css">
+         <children>
+            <Label alignment="CENTER" layoutX="15.0" layoutY="21.0" text="Changer mon mot de passe" textFill="#404040">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <FontAwesomeIcon fill="#b20d39" glyphName="GEARS" layoutX="407.0" layoutY="55.0" size="40" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

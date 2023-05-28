@@ -39,8 +39,13 @@ public class HomeController {
     private TextField txtPswrd;
     @FXML
     private Label btnForgot;
+    private AllController allController;
     
-    @FXML
+    public void setAllController(AllController allController) {
+		this.allController = allController;
+	}
+
+	@FXML
     private Label lbError;
     @FXML
     private Button btnConnecter;
@@ -144,31 +149,15 @@ public class HomeController {
                 }
             }}
             case "admin" -> {
-            	timerDao dao2 =new timerDao();
-            	Date end=dao2.getEnd();
-            	Date now=new Date(); 
-            	if(now.after(end)) {
-            		try {
-                 	   FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/winner.fxml"));
-                        Parent root = loader.load();
-
-                        Scene scene = new Scene(root);
-
-                        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                        currentStage.close();
-
-                        Stage newStage = new Stage();
-                        newStage.setScene(scene);
-                        newStage.show();
-                        
-                     } catch (IOException ex) {
-                         System.err.println(ex.getMessage());
-                     }
-            	}
-            	else {
+            	LoginDao loginDao=new LoginDao();
+            	String currentNameAdmin=loginDao.getFullnameAdmin(txtEmail.getText().toString());
+            
+            	
                 try {
-                	FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/swipe.fxml"));
+                	FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/All.fxml"));
                     Parent root = loader.load();
+                    AllController allController=loader.getController();
+                    allController.setName(currentNameAdmin);
 
                     Scene scene = new Scene(root);
 
@@ -182,7 +171,7 @@ public class HomeController {
                 } catch (IOException ex) {
                     System.err.println(ex.getMessage());
                 }
-            }}
+            }
             default -> {
             	if (txtEmail.getText().isEmpty() || txtPswrd.getText().isEmpty()) {
                     Alert alert = new Alert(AlertType.ERROR);

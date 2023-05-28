@@ -54,4 +54,25 @@ public class LoginDao {
 		
         
     }
+    public String getFullnameAdmin(String mail) {
+		String name=null;
+		Connection conn = DBconnection.getConnection();
+
+		try {
+
+			PreparedStatement ps = conn.prepareStatement("select concat(nom,' ',prenom) as fullname from admins where Email= ?");
+			ps.setString(1, mail);
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
+				name = rs.getString("fullname");
+
+			}
+
+		} catch (SQLException e2) {
+			e2.printStackTrace();
+		}
+		return name;
+
+	}
+
 }

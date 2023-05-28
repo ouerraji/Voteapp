@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="450.0" prefWidth="986.0" styleClass="Gray" stylesheets="@../application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.PartiController">
+   <children>
+      <TableView fx:id="TableParti" layoutX="9.0" layoutY="50.0" prefHeight="392.0" prefWidth="969.0">
+         <columns>
+            <TableColumn fx:id="Tidparti" prefWidth="61.0" text="ID_parti" />
+            <TableColumn fx:id="Tnom" prefWidth="279.0" text="Nom du parti" />
+            <TableColumn fx:id="Ttele" prefWidth="114.0" text="Telephone" />
+            <TableColumn fx:id="Tdesc" minWidth="0.0" prefWidth="514.0" text="Description" />
+         </columns>
+      </TableView>
+      <TextField fx:id="EnterParti" layoutX="40.0" layoutY="20.0" prefHeight="25.0" prefWidth="116.0" promptText="Identifiant du parti" />
+      <Button fx:id="ButtonRechercher" layoutX="161.0" layoutY="20.0" mnemonicParsing="false" onAction="#ClickButtonRechercher" styleClass="GrayKhfif" stylesheets="@../application.css" text="Rechercher">
+         <font>
+            <Font name="Calibri Light" size="13.0" />
+         </font>
+      </Button>
+      <FontAwesomeIcon fill="#2c2c2c" glyphName="SEARCH" layoutX="14.0" layoutY="37.0" selectionStart="1" size="20" />
+   </children>
+</AnchorPane>

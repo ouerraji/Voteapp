@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="450.0" prefWidth="986.0" styleClass="Gray" stylesheets="@../application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ResultatController">
+   <children>
+      <TableView fx:id="TableResultat" layoutX="16.0" layoutY="38.0" prefHeight="405.0" prefWidth="956.0">
+         <columns>
+            <TableColumn fx:id="Tclas" minWidth="0.0" prefWidth="73.0" text="Classement" />
+            <TableColumn fx:id="Tidcand" prefWidth="99.0" text="ID_Candidat" />
+            <TableColumn fx:id="Tgenre" minWidth="0.0" prefWidth="66.0" text="Genre" />
+            <TableColumn fx:id="Tname" minWidth="0.0" prefWidth="214.0" text="Nom et Prénom" />
+            <TableColumn fx:id="Tdatenais" minWidth="0.0" prefWidth="123.0" text="Date_de_naissance" />
+            <TableColumn fx:id="Tnbrv" minWidth="0.0" prefWidth="136.0" text="Nombre de votes" />
+            <TableColumn fx:id="Tprvote" minWidth="0.0" prefWidth="91.0" text="\%Vote" />
+            <TableColumn fx:id="TprF" minWidth="0.0" prefWidth="76.0" text="\%Femme" />
+            <TableColumn fx:id="TprM" minWidth="0.0" prefWidth="77.0" text="\%Homme" />
+         </columns>
+      </TableView>
+      <Label layoutX="311.0" layoutY="2.0" styleClass="parent" stylesheets="@../application.css" text="Les résultats actuels d'élection" textAlignment="CENTER" textFill="#b20d39">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
