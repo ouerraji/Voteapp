@@ -1,28 +1,29 @@
 package application.controller;
 
 import java.io.IOException;
-import java.util.Optional;
 import java.util.Date;
-import java.time.LocalDate;
+import java.util.Optional;
+
+import application.dao.CandidatHomeDao;
 import application.dao.LoginDao;
 import application.dao.swipeDao;
 import application.dao.timerDao;
-import application.model.Swipeinfo;
+import application.model.Candidat;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Dialog;
-import javafx.scene.control.DialogPane;
-import javafx.scene.control.ButtonType;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Dialog;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 
 
 
@@ -39,11 +40,9 @@ public class HomeController {
     private TextField txtPswrd;
     @FXML
     private Label btnForgot;
-    private AllController allController;
     
-    public void setAllController(AllController allController) {
-		this.allController = allController;
-	}
+    
+    
 
 	@FXML
     private Label lbError;
@@ -87,8 +86,19 @@ public class HomeController {
             	}
             	else {
                try {
-            	   FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/swipe.fxml"));
+            	   CandidatHomeDao candidatHomeDao=new CandidatHomeDao();
+            	   int currentCandidatid=candidatHomeDao.getIdCandidat(txtEmail.getText().toString());
+            	   
+            	   Candidat c=new Candidat();
+                c=candidatHomeDao.LoadCandidat(currentCandidatid);
+               	
+            	   FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/CandidatHome.fxml"));
                    Parent root = loader.load();
+                  CandidatHomeController candidatHomeController=loader.getController();
+                  candidatHomeController.displayCandidat(c);
+                  
+                  
+                   
 
                    Scene scene = new Scene(root);
 
@@ -111,6 +121,7 @@ public class HomeController {
             		try {
                  	   FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/winner.fxml"));
                         Parent root = loader.load();
+                        
 
                         Scene scene = new Scene(root);
 
@@ -128,6 +139,7 @@ public class HomeController {
             	else {
             	swipeDao swipeDao=new swipeDao();
             	int currentId=swipeDao.getIdElecteur(txtEmail.getText().toString());
+            	
                 try {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/swipe.fxml"));
                    Parent root = loader.load();
@@ -157,7 +169,7 @@ public class HomeController {
                 	FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/All.fxml"));
                     Parent root = loader.load();
                     AllController allController=loader.getController();
-                    allController.setName(currentNameAdmin);
+                    allController.setname(currentNameAdmin);
 
                     Scene scene = new Scene(root);
 

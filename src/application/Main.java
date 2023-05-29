@@ -12,7 +12,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			//Parent root=FXMLLoader.load(getClass().getResource("view/electeurRegistration.fxml"));
-			Parent root=FXMLLoader.load(getClass().getResource("view/All.fxml"));
+			Parent root=FXMLLoader.load(getClass().getResource("view/Home.fxml"));
 
 			Scene scene = new Scene(root);
 			//primaryStage.setTitle("Login");

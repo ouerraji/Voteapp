@@ -68,18 +68,7 @@ public ResultSet rs;
     @FXML
     private Label NomaAdmin;
     
-    private String name;
-    
    
-    
-
-
-	
-
-	public void setName(String name) {
-		System.out.println(name+" setter");
-		this.name = name;
-	}
 
 
 
@@ -304,7 +293,10 @@ public ResultSet rs;
 	public void initialize(URL arg0, ResourceBundle arg1) {
 	cnx =DBconnection.getConnection();
 	//NomaAdmin.setText("Hello");
-	System.out.println(name);
+	
+	}
+	public void setname(String nom) {
+		NomaAdmin.setText(nom);
 	}
 
 }

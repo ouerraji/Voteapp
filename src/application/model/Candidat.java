@@ -5,8 +5,19 @@ import java.sql.Date;
 public class Candidat {
 	private int id_cand,id_parti;
 		private String nom,prenom,adresse,email,password,cin;
-		char genre;
+		private String parti;
+		private int nbrVotes;
+		private char genre;
 		private Date Date_naissance;
+		private String fullname;
+		
+		public String getFullname() {
+			return fullname;
+		}
+
+		public void setFullname(String fullname) {
+			this.fullname = fullname;
+		}
 		private byte[] photo;
 		
 		public byte[] getPhoto() {
@@ -15,6 +26,34 @@ public class Candidat {
 
 		public void setPhoto(byte[] photo) {
 			this.photo = photo;
+		}
+
+		public String getParti() {
+			return parti;
+		}
+
+		public void setParti(String parti) {
+			this.parti = parti;
+		}
+
+		public int getNbrVotes() {
+			return nbrVotes;
+		}
+
+		public void setNbrVotes(int nbrVotes) {
+			this.nbrVotes = nbrVotes;
+		}
+
+		public void setCin(String cin) {
+			this.cin = cin;
+		}
+
+		public Candidat(String fullname, String cin, String parti, int nbrVotes) {
+			super();
+			this.fullname=fullname;
+			this.cin = cin;
+			this.parti = parti;
+			this.nbrVotes = nbrVotes;
 		}
 
 		public Candidat(int id_cand, int id_parti, String nom, String prenom, String adresse, String email,
