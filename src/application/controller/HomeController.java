@@ -74,9 +74,10 @@ public class HomeController {
                         Scene scene = new Scene(root);
 
                         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                        currentStage.close();
+                        
 
                         Stage newStage = new Stage();
+                        newStage.setTitle("Winner");
                         newStage.setScene(scene);
                         newStage.show();
                         
@@ -103,9 +104,10 @@ public class HomeController {
                    Scene scene = new Scene(root);
 
                    Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                   currentStage.close();
+                   
 
                    Stage newStage = new Stage();
+                   newStage.setTitle("Profil");
                    newStage.setScene(scene);
                    newStage.show();
                    
@@ -126,9 +128,10 @@ public class HomeController {
                         Scene scene = new Scene(root);
 
                         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                        currentStage.close();
+                        
 
                         Stage newStage = new Stage();
+                        newStage.setTitle("Winner");
                         newStage.setScene(scene);
                         newStage.show();
                         
@@ -149,9 +152,10 @@ public class HomeController {
                    Scene scene = new Scene(root);
 
                    Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                   currentStage.close();
+                   
 
                    Stage newStage = new Stage();
+                   newStage.setTitle("Candidats");
                    newStage.setScene(scene);
                    newStage.show();
                    
@@ -177,6 +181,7 @@ public class HomeController {
                     currentStage.close();
 
                     Stage newStage = new Stage();
+                    newStage.setTitle("Administration");
                     newStage.setScene(scene);
                     newStage.show();
                     

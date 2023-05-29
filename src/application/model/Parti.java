@@ -2,7 +2,16 @@ package application.model;
 
 public class Parti {
 private int	id_parti;
+private byte[] logo;
+
 private String	nom,description,tel;
+public Parti( String nom, byte[] logo, String description, String tel) {
+    super();
+    this.nom = nom;
+    this.logo = logo;
+    this.description = description;
+    this.tel = tel;
+}
 public Parti(int id_parti, String nom, String description, String tel) {
 	super();
 	this.id_parti = id_parti;
@@ -12,6 +21,13 @@ public Parti(int id_parti, String nom, String description, String tel) {
 }
 public int getId_parti() {
 	return id_parti;
+}
+
+public byte[] getLogo() {
+	return logo;
+}
+public void setLogo(byte[] logo) {
+	this.logo = logo;
 }
 public void setId_parti(int id_parti) {
 	this.id_parti = id_parti;

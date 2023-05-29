@@ -86,6 +86,7 @@ public ResultSet rs;
     private Pane Pane1;
     @FXML
     void ClickButtonAccueil(MouseEvent event) {
+    	ButtonCalendrier.setStyle("-fx-background-color: #018594; -fx-text-fill: white;");
     	ButtonAccueil.setStyle("-fx-background-color: #016e7a; -fx-text-fill: white;");
     	ButtonCandidat.setStyle("-fx-background-color: #018594; -fx-text-fill: white;");
     	ButtonElecteur.setStyle("-fx-background-color: #018594; -fx-text-fill: white;");
@@ -106,6 +107,7 @@ public ResultSet rs;
 
     @FXML
     void ClickButtonAdmin(ActionEvent event) {
+    	ButtonCalendrier.setStyle("-fx-background-color: #018594; -fx-text-fill: white;");
     	ButtonAccueil.setStyle("-fx-background-color: #018594; -fx-text-fill: white;");
     	ButtonCandidat.setStyle("-fx-background-color: #018594; -fx-text-fill: white;");
     	ButtonElecteur.setStyle("-fx-background-color: #018594; -fx-text-fill: white;");
@@ -128,6 +130,7 @@ public ResultSet rs;
 
     @FXML
     void ClickButtonCandidat(MouseEvent event) {
+    	ButtonCalendrier.setStyle("-fx-background-color: #018594; -fx-text-fill: white;");
     	ButtonAccueil.setStyle("-fx-background-color: #018594; -fx-text-fill: white;");
     	ButtonCandidat.setStyle("-fx-background-color: #016e7a; -fx-text-fill: white;");
     	ButtonElecteur.setStyle("-fx-background-color: #018594; -fx-text-fill: white;");
@@ -147,6 +150,7 @@ public ResultSet rs;
 
     @FXML
     void ClickButtonElecteur(MouseEvent event) {
+    	ButtonCalendrier.setStyle("-fx-background-color: #018594; -fx-text-fill: white;");
     	ButtonAccueil.setStyle("-fx-background-color: #018594; -fx-text-fill: white;");
     	ButtonCandidat.setStyle("-fx-background-color: #018594; -fx-text-fill: white;");
     	ButtonElecteur.setStyle("-fx-background-color: #016e7a; -fx-text-fill: white;");
@@ -192,6 +196,7 @@ public ResultSet rs;
     }
     @FXML
     void ClickButtonElection(MouseEvent event) {
+    	ButtonCalendrier.setStyle("-fx-background-color: #018594; -fx-text-fill: white;");
     	ButtonAccueil.setStyle("-fx-background-color: #018594; -fx-text-fill: white;");
     	ButtonCandidat.setStyle("-fx-background-color: #018594; -fx-text-fill: white;");
     	ButtonElecteur.setStyle("-fx-background-color: #018594; -fx-text-fill: white;");
@@ -213,6 +218,7 @@ public ResultSet rs;
 
     @FXML
     void ClickButtonLogout(MouseEvent event) {
+    	ButtonCalendrier.setStyle("-fx-background-color: #018594; -fx-text-fill: white;");
     	ButtonAccueil.setStyle("-fx-background-color: #018594; -fx-text-fill: white;");
     	ButtonCandidat.setStyle("-fx-background-color: #018594; -fx-text-fill: white;");
     	ButtonElecteur.setStyle("-fx-background-color: #018594; -fx-text-fill: white;");
@@ -223,7 +229,7 @@ public ResultSet rs;
     	Alert alert=new Alert(AlertType.CONFIRMATION);
     	alert.setTitle("LOG OUT");
         alert.setHeaderText(null);
-        alert.setContentText("Vous allez être déconnecté de votre espace administrateur");
+        alert.setContentText("Vous allez etre deconnecter de votre espace administrateur");
         Optional<ButtonType> result = alert.showAndWait();
         try {
       	   FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/Home.fxml"));
@@ -247,6 +253,7 @@ public ResultSet rs;
 
     @FXML
     void ClickButtonParti(MouseEvent event) {
+    	ButtonCalendrier.setStyle("-fx-background-color: #018594; -fx-text-fill: white;");
       	ButtonAccueil.setStyle("-fx-background-color: #018594; -fx-text-fill: white;");
     	ButtonCandidat.setStyle("-fx-background-color: #018594; -fx-text-fill: white;");
     	ButtonElecteur.setStyle("-fx-background-color: #018594; -fx-text-fill: white;");
@@ -268,6 +275,7 @@ public ResultSet rs;
 
     @FXML
     void ClickButtonResultat(MouseEvent event) {
+    	ButtonCalendrier.setStyle("-fx-background-color: #018594; -fx-text-fill: white;");
     	ButtonAccueil.setStyle("-fx-background-color: #018594; -fx-text-fill: white;");
     	ButtonCandidat.setStyle("-fx-background-color: #018594; -fx-text-fill: white;");
     	ButtonElecteur.setStyle("-fx-background-color: #018594; -fx-text-fill: white;");

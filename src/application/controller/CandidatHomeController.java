@@ -73,7 +73,7 @@ public class CandidatHomeController implements Initializable {
          fullName.setText(cand.getFullname());
          cand_CIN.setText(cand.getCin());
          partiName.setText(cand.getParti());
-         nbrVotes.setText(""+cand.getNbrVotes());
+         nbrVotes.setText("Total Votes : "+cand.getNbrVotes());
         
     }
 

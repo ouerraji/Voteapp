@@ -41,8 +41,9 @@ public class ChoixCompteController implements Initializable {
                         Stage stage = (Stage) node.getScene().getWindow();
                         stage.close();
                         
-                        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("CandidatHome.fxml")));
+                        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/application/view/I1.fxml")));
                         stage.setScene(scene);
+                        stage.setTitle("Inscription du Candidat");
                         stage.show();
              } catch (IOException ex) {
                         System.err.println(ex.getMessage());
@@ -57,6 +58,7 @@ public class ChoixCompteController implements Initializable {
                         
                         Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/application/view/electeurRegistration.fxml")));
                         stage.setScene(scene);
+                        stage.setTitle("Inscription du Electeur");
                         stage.show();
              } catch (IOException ex) {
                         System.err.println(ex.getMessage());

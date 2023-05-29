@@ -1,6 +1,7 @@
 package application.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,7 +17,46 @@ import application.util.DBconnection;
  */
 public class CandidatDAO {
 
-	
+	public boolean addCandidat(Candidat candidat, Connection connection) {
+        boolean success = false;
+        PreparedStatement ps = null;
+
+        try {
+            if (connection != null) {
+                ps = connection.prepareStatement("INSERT INTO `candidat` (`nom`, `prenom`, `Genre`, `Date_Naissance`, `Adresse`, `Email`, `Password`, `CIN`, `photo`, `id_parti`) " +
+                        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+                ps.setString(1, candidat.getNom());
+                ps.setString(2, candidat.getPrenom());
+                ps.setString(3, String.valueOf(candidat.getGenre()));
+                ps.setDate(4, new Date(candidat.getDate_naissance().getTime()));
+                ps.setString(5, candidat.getAdresse());
+                ps.setString(6, candidat.getEmail());
+                ps.setString(7, candidat.getPassword());
+                ps.setString(8, candidat.getCin());
+                ps.setBytes(9, candidat.getPhoto());
+                ps.setInt(10, candidat.getParty().getId_parti());
+                int rowsAffected = ps.executeUpdate();
+
+                success = (rowsAffected > 0);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            // Close PreparedStatement in the finally block
+            if (ps != null) {
+                try {
+                    ps.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return success;
+    }
+
+
 public ArrayList<Candidat> getCandidats() {
 		Connection conn=DBconnection.getConnection();
 		ArrayList<Candidat> candidats=new ArrayList<>();

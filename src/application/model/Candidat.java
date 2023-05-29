@@ -10,7 +10,16 @@ public class Candidat {
 		private char genre;
 		private Date Date_naissance;
 		private String fullname;
+		private Parti party;
 		
+		public Parti getParty() {
+			return party;
+		}
+
+		public void setParty(Parti party) {
+			this.party = party;
+		}
+
 		public String getFullname() {
 			return fullname;
 		}
