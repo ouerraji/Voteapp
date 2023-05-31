@@ -37,18 +37,10 @@ public class CandidatHomeDao {
 	            cand.setPhoto(photo);
 	        }
 
-	        rs.close();
-	        ps.close();
+	       
 	    } catch (SQLException ex) {
 	        ex.printStackTrace();
-	    } finally {
-	        // Make sure to close the connection
-	        try {
-	            conn.close();
-	        } catch (SQLException ex) {
-	            ex.printStackTrace();
-	        }
-	    }
+	    } 
 
 	    return cand;
 	}

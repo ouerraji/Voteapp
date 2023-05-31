@@ -152,13 +152,7 @@ currentWindow.hide();
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                connection.close(); 
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
+        } 
 
     }
 

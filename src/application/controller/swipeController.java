@@ -70,7 +70,7 @@ public class swipeController {
 	int index = 0;
 
 	public void initialize() {
-		System.out.println("what"+id_elec);
+		
 		swipeDao swipeDao = new swipeDao();
 		swipeinfos = swipeDao.getSwipeinfos();
 		if (swipeinfos.size() > 0) {

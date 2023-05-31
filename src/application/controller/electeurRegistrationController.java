@@ -3,6 +3,7 @@ package application.controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Date;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -26,6 +27,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import application.model.*;
+import application.dao.*;
 
 public class electeurRegistrationController implements Initializable {
 
@@ -153,7 +156,7 @@ public class electeurRegistrationController implements Initializable {
         Optional<ButtonType> result = alert.showAndWait();
     		
     	}else {
-    		/*Electeur e=new Electeur();
+    		Electeur e=new Electeur();
     		e.setNom(nomtxtfield.getText());
     		e.setPrenom(prenomtxt.getText());
     		e.setDate_Naissance(Date.valueOf(dateinput.getValue()));
@@ -165,14 +168,14 @@ public class electeurRegistrationController implements Initializable {
     		e.setCIN(cintxt.getText());
     		ElecteurDAO dao=new ElecteurDAO();
     		dao.addElecteur(e);
-    		*/
+    		
     		Alert alert=new Alert(AlertType.INFORMATION);
         	alert.setTitle("Inscription réussie");
             alert.setHeaderText(null);
             
             alert.setContentText("L'inscription a réussi !");
             Optional<ButtonType> result = alert.showAndWait();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/swipe.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/Home.fxml"));
             Parent root = loader.load();
 
             Scene scene = new Scene(root);

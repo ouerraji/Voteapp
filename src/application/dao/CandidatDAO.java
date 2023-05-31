@@ -42,16 +42,7 @@ public class CandidatDAO {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            // Close PreparedStatement in the finally block
-            if (ps != null) {
-                try {
-                    ps.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
+        } 
 
         return success;
     }
